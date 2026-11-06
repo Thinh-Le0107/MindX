@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Digital Skills - Landing Page Layout</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS v3 Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            DEFAULT: '#9d0248', // Màu đỏ rượu vang / burgundy chủ đạo
+                            hover: '#82023b',
+                            light: '#fdf2f8',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-[#fbfcfe] text-slate-800 font-sans antialiased selection:bg-pink-100 selection:text-brand">
+
+    <!-- KHUNG CHỨA TOÀN TRANG (MAX WIDTH) -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-4">
+
+        <!-- ======================= HEADER / NAVBAR ======================= -->
+        <header class="flex items-center justify-between py-4">
+
+            <!-- 1. Logo (Dạng biểu tượng chấm màu hạt tím đỏ) -->
+            <div class="flex items-center gap-3">
+                <a href="#" class="flex items-center gap-2 group" aria-label="Trang chủ">
+                    <!-- SVG biểu tượng logo dạng chùm hạt -->
+                    <img src="Logo.png" alt="logo" class="w-[35px] h-[35px] object-contain" />
+                </a>
+            </div>
+
+            <!-- 2. Menu Điều Hướng (Navigation Links) -->
+            <nav class="hidden md:flex items-center gap-8 text-[15px] font-medium text-slate-600">
+                <a href="#" class="hover:text-brand transition-colors">About us</a>
+
+                <!-- Menu dropdown "Our Class" -->
+                <div class="relative group cursor-pointer flex items-center gap-1.5 hover:text-brand transition-colors">
+                    <span>Our Class</span>
+                    <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor"
+                        stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+
+                <a href="#" class="hover:text-brand transition-colors">Blog</a>
+                <a href="#" class="hover:text-brand transition-colors">Contact</a>
+            </nav>
+
+            <!-- 3. Khu vực bên phải: Icon giỏ/bookmark + Ô tìm kiếm -->
+            <div class="flex items-center gap-4">
+                <!-- Nút icon nhỏ (Màu đỏ rượu vang) -->
+                <button
+                    class="w-9 h-9 flex items-center justify-center rounded-lg bg-brand text-white hover:bg-brand-hover transition-colors shadow-sm"
+                    aria-label="Lưu khóa học">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
+                    </svg>
+                </button>
+
+                <!-- Ô tìm kiếm (Search Box) -->
+                <div class="relative hidden sm:block">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-slate-400">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </span>
+                    <input type="text" placeholder="Search"
+                        class="w-44 lg:w-56 pl-10 pr-4 py-2 text-sm bg-white border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand/30 focus:border-brand transition-all shadow-sm">
+                </div>
+            </div>
+        </header>
+
+        <!-- ======================= HERO SECTION ======================= -->
+        <main class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center pt-8 sm:pt-12 lg:pt-16 pb-16">
+
+            <!-- CỘT BÊN TRÁI: TIÊU ĐỀ, MÔ TẢ, NÚT BẤM & ĐỐI TÁC -->
+            <div class="lg:col-span-7 space-y-8 pr-0 lg:pr-6">
+
+                <!-- 1. Tiêu đề chính (Heading) -->
+                <h1
+                    class="text-4xl sm:text-5xl lg:text-[58px] font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+                    Master Digital Skills <br class="hidden sm:inline">with Ease!
+                </h1>
+
+                <!-- 2. Đoạn giới thiệu (Description) -->
+                <p class="text-base sm:text-lg text-slate-500 max-w-xl leading-relaxed">
+                    Unlock Digital Mastery Effortlessly! Explore and enhance your skills with our user-friendly
+                    platform.
+                </p>
+
+                <!-- 3. Huy hiệu học viên (Total students) -->
+                <div class="border-l-4 border-brand pl-4 flex flex-col gap-2.5">
+                    <span class="text-sm font-bold text-slate-700">Total students</span>
+
+                    <div class="flex items-center -space-x-2.5">
+                        <!-- Avatar 1 -->
+                        <img class="w-10 h-10 rounded-full object-cover ring-2 ring-white shadow-sm"
+                            src="1.jpg"
+                            alt="Student 1">
+                        <!-- Avatar 2 -->
+                        <img class="w-10 h-10 rounded-full object-cover ring-2 ring-white shadow-sm"
+                            src="2.jpg"
+                            alt="Student 2">
+                        <!-- Avatar 3 -->
+                        <img class="w-10 h-10 rounded-full object-cover ring-2 ring-white shadow-sm"
+                            src="3.jpg"
+                            alt="Student 3">
+                        <!-- Avatar 4 -->
+                        <img class="w-10 h-10 rounded-full object-cover ring-2 ring-white shadow-sm"
+                            src="4.jpg"
+                            alt="Student 4">
+                        <!-- Badge số lượng (+900) -->
+                        <div
+                            class="w-10 h-10 rounded-full bg-brand text-white text-xs font-bold flex items-center justify-center ring-2 ring-white shadow-sm">
+                            900+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Nhóm nút bấm hành động (CTA Buttons) -->
+                <div class="flex flex-wrap items-center gap-4 pt-1">
+                    <!-- Nút bắt đầu (Filled) -->
+                    <a href="#"
+                        class="px-8 py-3.5 bg-brand hover:bg-brand-hover text-white text-base font-semibold rounded-xl shadow-lg shadow-brand/20 hover:shadow-xl hover:-translate-y-0.5 transition-all text-center">
+                        Start learning
+                    </a>
+
+                    <!-- Nút xem thêm (Outlined) -->
+                    <a href="#"
+                        class="px-8 py-3.5 bg-transparent border-2 border-brand text-slate-800 hover:bg-pink-50 text-base font-semibold rounded-xl transition-all text-center">
+                        Learn more
+                    </a>
+                </div>
+
+                <!-- 5. Phần đối tác (Trusted by) -->
+                <div class="pt-4 space-y-3">
+                    <p class="text-sm font-semibold text-slate-500">Trusted by</p>
+
+                    <div class="flex flex-wrap items-center gap-3 sm:gap-4">
+                        <!-- Google -->
+                        <div
+                            class="px-5 py-2.5 bg-white border border-slate-100 rounded-xl shadow-sm flex items-center justify-center h-11 hover:shadow-md transition-shadow">
+                            <img src="Google Logotype.png" alt="Google" class="h-5 w-auto object-contain">
+                        </div>
+
+                        <!-- Canva -->
+                        <div
+                            class="px-5 py-2.5 bg-white border border-slate-100 rounded-xl shadow-sm flex items-center justify-center h-11 hover:shadow-md transition-shadow">
+                            <img src="Canva Logotype.png" alt="Canva" class="h-6 w-auto object-contain">
+                        </div>
+
+                        <!-- Amazon -->
+                        <div
+                            class="px-5 py-2.5 bg-white border border-slate-100 rounded-xl shadow-sm flex items-center justify-center h-11 hover:shadow-md transition-shadow">
+                            <img src="Amazon.png" alt="Amazon" class="h-4 w-auto object-contain">
+                        </div>
+
+                        <!-- Sketch -->
+                        <div
+                            class="px-5 py-2.5 bg-white border border-slate-100 rounded-xl shadow-sm flex items-center justify-center h-11 hover:shadow-md transition-shadow">
+                            <img src="Sketch Logotype.png" alt="Sketch" class="h-5 w-auto object-contain">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CỘT BÊN PHẢI: HÌNH ẢNH HERO VÀ THẺ GIẢNG VIÊN NỔI -->
+            <div class="lg:col-span-5 relative flex justify-center lg:justify-end">
+
+                <!-- KHUNG CHỨA TOÀN BỘ KHỐI ẢNH (Bao gồm thẻ nổi) -->
+                <div class="relative w-full max-w-[390px] sm:max-w-[430px]">
+
+                    <!-- 1. THẺ NỔI "Certified Instructor" (Đã dời sang phía ngoài bên trái để không che tóc cô giáo) -->
+                    <!-- [MẸO]: Bạn có thể tăng giảm -left-..., -top-... bên dưới để di chuyển thẻ tùy ý -->
+                    <div
+                        class="absolute -top-8 -left-8 sm:-top-10 sm:-left-20 lg:-left-28 z-20 bg-white/95 backdrop-blur-md p-4 sm:p-5 rounded-2xl shadow-xl shadow-slate-300/40 border border-slate-100 min-w-[210px] sm:min-w-[230px]">
+                        <h4 class="text-xs sm:text-sm font-bold text-slate-800 mb-3.5">Certified Instructor</h4>
+
+                        <div class="space-y-3">
+                            <!-- Giảng viên 1 -->
+                            <div class="flex items-center gap-3">
+                                <img class="w-9 h-9 rounded-full object-cover ring-2 ring-slate-100"
+                                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face"
+                                    alt="Donald Robert">
+                                <div>
+                                    <p class="text-xs font-bold text-slate-900 leading-tight">Donald Robert</p>
+                                    <p class="text-[11px] text-slate-500 font-medium">UI/UX Design</p>
+                                </div>
+                            </div>
+
+                            <!-- Giảng viên 2 -->
+                            <div class="flex items-center gap-3">
+                                <img class="w-9 h-9 rounded-full object-cover ring-2 ring-slate-100"
+                                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face"
+                                    alt="John White">
+                                <div>
+                                    <p class="text-xs font-bold text-slate-900 leading-tight">John White</p>
+                                    <p class="text-[11px] text-slate-500 font-medium">Web Development</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. HÌNH ẢNH CHÍNH (Cô gái với khăn turban và áo đỏ) -->
+                    <!-- [GHI CHÚ]: Bạn có thể thay đổi đường dẫn ảnh trong thẻ img bên dưới khi cần -->
+                    <div
+                        class="relative rounded-[2.5rem] overflow-hidden bg-slate-100 shadow-2xl shadow-slate-200/80 border border-slate-100 aspect-[3.7/5]">
+                        <img src="teacher.jpg"
+                            alt="Master Digital Skills" class="w-full h-full object-cover object-top">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
